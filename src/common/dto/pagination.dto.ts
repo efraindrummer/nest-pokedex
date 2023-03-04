@@ -55,5 +55,6 @@ export class PaginationDto {
     offset?: number;
 
     Lo siguiente que se hace es poner un decorator llamado @Transform en el fichero DTO, el cual recibe una callback y que va a llamar la funcion toNumber() creada anteriormente
+
 }
 */
