@@ -1,4 +1,5 @@
-import { IsNumber, IsOptional, IsPositive, Min } from "class-validator";
+import { IsBoolean, IsNumber, IsOptional, IsPositive, Min } from "class-validator";
+import { TransformToBoolean } from "../helpers/TransformBooleanDecorator";
 
 export class PaginationDto {
 
@@ -12,6 +13,11 @@ export class PaginationDto {
     @IsNumber()
     @IsPositive()
     offset?: number;
+
+    @IsOptional()
+    @TransformToBoolean()
+    @IsBoolean()
+    active?: boolean;
 }
 
 /* Si alguno de ustedes NO quiere aplicar esta regla al main, ya sea por performance u otro motivo, les recomiendo "declarar el tipo en la clase PaginationDto" */
